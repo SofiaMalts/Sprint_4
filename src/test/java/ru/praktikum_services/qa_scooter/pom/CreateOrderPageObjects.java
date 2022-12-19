@@ -1,4 +1,4 @@
-package PageObjectsPackage;
+package ru.praktikum_services.qa_scooter.pom;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -37,7 +37,6 @@ public class CreateOrderPageObjects {
     //Срок аренды  div class = Dropdown-placeholder
     private By rentTime = By.xpath(".//div[@class = 'Dropdown-placeholder' and text() = '* Срок аренды']");
     private By rentTimeDdl = By.xpath(".//div[@class = 'Dropdown-menu']");
-    private By rentTimeDdlItem = By.xpath(".//div[@class = 'Dropdown-option']");
     // Цвет самоката
     // черный жемчуг чекбокс
     private By blackColorCheckBox = By.xpath(".//input[@class = 'Checkbox_Input__14A2w' and @id = 'black']");

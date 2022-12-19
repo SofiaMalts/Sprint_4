@@ -1,6 +1,8 @@
-package Tests;
-import PageObjectsPackage.HomePageObjects;
-import PageObjectsPackage.CreateOrderPageObjects;
+package ru.praktikum_services.qa_scooter.tests;
+import ru.praktikum_services.qa_scooter.pom.CreateOrderPageObjects;
+import ru.praktikum_services.qa_scooter.pom.HomePageObjects;
+
+import static ru.praktikum_services.qa_scooter.constants.Url.HOME_PAGE_URL;
 import org.junit.Test;
 import org.junit.After;
 import org.junit.runner.RunWith;
@@ -10,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 
 @RunWith(Parameterized.class)
-public class CreateOrder {
+public class CreateOrderTest {
     private WebDriver driver;
     private final String firstName;
     private final String lastName;
@@ -23,7 +25,7 @@ public class CreateOrder {
     private final String commentText;
     private final String color;
 
-    public CreateOrder(String firstName, String lastName, String address, String stationName, String phoneNumber, String date, String time, String commentText, String color){
+    public CreateOrderTest(String firstName, String lastName, String address, String stationName, String phoneNumber, String date, String time, String commentText, String color){
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -46,7 +48,7 @@ public class CreateOrder {
     public void createOrderFromUpperButton(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://qa-scooter.praktikum-services.ru/");
+        driver.get(HOME_PAGE_URL);
         HomePageObjects objHomePage = new HomePageObjects(driver);
         objHomePage.confirmCookie();
         objHomePage.clickUpperOrderBtn();
@@ -60,7 +62,7 @@ public class CreateOrder {
     public void createOrderFromMiddleButton(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://qa-scooter.praktikum-services.ru/");
+        driver.get(HOME_PAGE_URL);
         HomePageObjects objHomePage = new HomePageObjects(driver);
         objHomePage.confirmCookie();
         objHomePage.clickMiddleOrderBtn();
